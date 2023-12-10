@@ -11,7 +11,7 @@ class getallproducts {
   Future<List<Productmodels>> GetAllProducts() async {
     {
       final response =
-          await http.get(Uri.parse('http://10.0.0.2:8000/api/show'));
+          await http.get(Uri.parse('http://10.0.2.2:8000/api/show'));
 
       var data = jsonDecode(response.body);
       //http://127.0.0.1:8000/api/show
@@ -20,7 +20,7 @@ class getallproducts {
         productmodel.add(
           Productmodels.fromJson(data[i]),
         );
-        print(productmodel[i]);
+       // print(productmodel[i]);
       }
       return productmodel;
     }
