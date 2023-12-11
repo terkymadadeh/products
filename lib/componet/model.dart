@@ -1,18 +1,20 @@
 class Productmodels {
-  final int? id;
+  final String? name;
+
   final String? brand;
-  final double? price;
+  final dynamic price;
   final String? description;
 
- 
+//  "name": "test",
+// "description": "This is the description to product 1",
+// "price": 250,dynaimic
+// "brand": "Brand 1"
 
   Productmodels({
-    this.id,
+    this.name,
     this.brand,
     this.price,
     this.description,
- 
-   
   });
 
 // "name": "test",
@@ -21,13 +23,12 @@ class Productmodels {
 //             "brand": "Brand 1"
 
   factory Productmodels.fromJson(jsonData) {
-   // print(jsonData);
+    // print(jsonData);
     return Productmodels(
-      id: int.parse(jsonData['id'].toString()),
-      brand : jsonData['titel'],
+      name: jsonData['name'],
+      brand: jsonData['brand'],
       price: jsonData['price'],
       description: jsonData['description'],
-     
     );
   }
 }
